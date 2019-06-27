@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% block css %}
+    {% endblock %}
+    <meta charset="utf-8">
+    <title>{% block title %}سوپرمارکت اینترنتی پلنوم{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div id="cart">
+        <a href="{% url "cart:cart_detail" %}">
+          <p><span id="cart_items">{{ cart|length }}</span>سبد خرید</p>
+        </a>
+      </div>
+      <a href="{% url "planome:home_page" %}" id="logo"><img src="{% static "media/image/logo/PLANome-logo.png" %}" alt="planome logo"></a>
+      <a href="#" id="barcode">درخواست کالا</a>
+    </div>
+    <a href="#">
+      <div id="subheader">
+        <p>جستجوی پیشرفته</p>
+        <i class="fas fa-angle-left" id="search-arrow"></i>
+      </div>
+    </a>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div id="features">
+      <i class="fas fa-money-check-alt features-icon-list"></i>
+      <p class="features-text-list">امکان پرداخت در محل پس از دریافت سفارش</p>
+      <i class="fas fa-angle-left features-list-arrow"></i>
+      <i class="fas fa-truck features-icon-list"></i>
+      <p class="features-text-list" id="free-shipping">ارسال رایگان برای خریدهای بیشتر از یک صد هزار تومان</p>
+      <i class="fas fa-angle-left features-list-arrow"></i>
+      <i class="fas fa-history features-icon-list"></i>
+      <p class="features-text-list" id="reject-product">ضمانت بازگشت کالا</p>
+      <i class="fas fa-angle-left features-list-arrow"></i>
+    </div>
+    <div id="footer">
+      <a href="#"><i class="fab fa-instagram hollow social"></i></a>
+      <a href="#"><i class="fab fa-twitter hollow social"></i></a>
+      <a href="#"><i class="fab fa-linkedin hollow social"></i></a>
+      <a href="#"><i class="fas fa-envelope hollow social"></i></a>
+      <hr>
+      <img id="footer-logo" src="{% static "media/image/logo/PLANome-logo-gray.png" %}">
+      <p class="hollow" id="footer-logotext">PLANome</p>
+      <a class="hollow footer-textlink" id="faq" href="#">سوالات متداول</a>
+      <a class="hollow footer-textlink" id="usage" href="#">شرایط استفاده</a>
+      <a class="hollow footer-textlink" id="privacy" href="#">حریم خصوصی</a>
+      <a class="hollow footer-textlink" id="about" href="#">درباره پلنوم</a>
+      <a class="hollow footer-textlink" id="copyleft-text" href="#">Copyleft <span id="copyleft-symbol">&copy;</span> text</a>
+    </div>
+    <script src="https://kit.fontawesome.com/a5a2f71d48.js"></script>
+  </body>
+</html>

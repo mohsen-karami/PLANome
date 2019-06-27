@@ -1,0 +1,61 @@
+.subcategories {
+  position: fixed;
+  top: 16vh;
+  width: 100vw;
+  height: 7vh;
+  background-color: rgba(2,88,128, .2);
+  box-shadow: inset 0 0 40px rgb(2,88,128);
+}
+
+.subcategories a {
+  position: relative;
+  background-color: rgb(2,88,128);
+  padding: 1vw 3vw;
+  border-radius: 100vw;
+  color: #fff;
+  text-decoration: none;
+  top: 2vh;
+  left: 6vw;
+  margin-right: 5vw;
+  font-size: 3.5vw;
+}
+
+.product_list {
+  margin-top: 25vh;
+}
+
+.item {
+  display: block;
+  clear: both;
+}
+
+.item img {
+  width: 30vw;
+  float: right;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+}
+
+.product_link {
+  text-decoration: none;
+  color: rgb(0,6,28);
+  font-size: 4vw;
+  margin-left: 15vw;
+  position: absolute;
+  margin-top: 5vh;
+}
+
+#num {
+  position: absolute;
+  color: rgb(8,128,128);
+  direction: rtl;
+  margin-top: 9vh;
+  margin-left: 40vw;
+}
+
+#enter {
+  color: rgb(2,88,128);
+  margin-left: 5vw;
+  margin-top: 8vh;
+  position: absolute;
+}
