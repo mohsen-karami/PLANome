@@ -1,0 +1,23 @@
+h1 {
+  color: rgb(2,88,128);
+  margin-top: 20vh;
+  text-align: center;
+  font-size: 5vw;
+}
+
+h2 {
+  color: rgba(2,88,128,.5);
+  text-align: center;
+  font-size: 4vw;
+  direction: rtl;
+}
+
+h3 {
+  color: #fff;
+  margin-top: 5vh;
+  text-align: center;
+  font-size: 5vw;
+  background-color: rgb(2,88,128);
+  width: 100vw;
+  padding: 2.5vh 0;
+}

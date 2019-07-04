@@ -1,0 +1,1 @@
+from PLANome.wsgi import application

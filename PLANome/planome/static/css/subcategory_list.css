@@ -1,0 +1,25 @@
+.subcategories {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+}
+
+.image {
+  width: 30vw;
+}
+
+.text {
+  font-size: 3.5vw;
+  text-decoration: none;
+}
+
+.subcategory-right {
+  margin-right: 15vw;
+  margin-left: 5vw;
+  float: right;
+  clear: right;
+}
+
+.subcategory-left {
+  margin-right: 5vw;
+  margin-left: 15vw;
+}
