@@ -3,7 +3,6 @@ from __future__ import absolute_import, unicode_literals
 
 
 #CELERY_BROKER_URL = 'amqp://guest:guest@localhost//'
-#CELERY_BROKER_URL = 'amqp://uisargfn:whtScEAvgZR8pt-S2-oNdkjYzaExCvJW@albatross.rmq.cloudamqp.com/uisargfn'
 
 
 """
@@ -31,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from planome.secretkey import SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['planome.ir', 'www.planome.ir']
 
@@ -60,6 +59,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SECURE_SSL_REDIRECT = True
 ROOT_URLCONF = 'PLANome.urls'
 
 TEMPLATES = [
@@ -129,22 +129,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'planome/static/')
 
-
-MEDIA_URL = '/planome/static/media/'
+MEDIA_URL = '/static/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'planome/static/media/')
 
 
 CART_SESSION_ID = 'cart'
 
 
-EMAIL_HOST = 'your_email_host'
-EMAIL_HOST_USER = 'your_email_host_user'
-EMAIL_HOST_PASSWORD = 'your_email_host_password'
-EMAIL_PORT = 'your_email_port'
-EMAIL_USE_TLS = 'True_or_False'
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'info.planome@gmail.com'
+EMAIL_HOST_PASSWORD = 'tnwrkhhdesorulge'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
