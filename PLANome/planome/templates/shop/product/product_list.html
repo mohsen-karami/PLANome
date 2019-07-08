@@ -22,7 +22,11 @@
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'media/image/no_image_available/no_image_available.png' %}{% endif %}" alt="an image of {{ product.name }}">
         </a>
         <a class="product_link" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-        <p id="num">{{ product.price }} تومان</p>
+        {% if product.available == True %}
+          <p id="num">{{ product.price }} تومان</p>
+        {% else %}
+          <p id="num">ناموجود</p>
+        {% endif %}
         <a href="{{ product.get_absolute_url }}"><i class="fas fa-angle-left" id="enter"></i></a>
       </div>
     {% endfor %}

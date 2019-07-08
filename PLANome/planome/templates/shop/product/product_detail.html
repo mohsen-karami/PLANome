@@ -18,13 +18,16 @@
   <div class="product_detail">
     <h1>{{ product.name }}</h1>
     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "media/image/no_image_available/no_image_available.png" %}{% endif %}" alt="an image of {{ product.name }}">
-    <h2><a href="{{ product.category.get_absolute_url}}">{{ product.category }}</a></h2>
-    <p class="price">{{ product.price }} تومان</p>
-    <h2>{{ product.description|linebreaks }}</h2>
-    <form action="{% url "cart:cart_add" product.id %}" method="post">
-      {{ cart_product_form }}
-      {% csrf_token %}
-      <input type="submit" value="افزودن به سبد خرید">
-    </form>
+    {% if product.available == True %}
+      <p class="price">{{ product.price }} تومان</p>
+      <form action="{% url "cart:cart_add" product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="افزودن به سبد خرید">
+      </form>
+    {% else %}
+      <p class="price">ناموجود</p>
+      <h2>{{ product.description|linebreaks }}</h2>
+    {% endif %}
   </div>
 {% endblock %}
