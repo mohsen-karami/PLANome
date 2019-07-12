@@ -41,6 +41,15 @@ class SubCategory(models.Model):
 def image_path(instance, filename):
     return 'image/products/{0}/{1}'.format(instance.id, filename)
 
+
+class Store(models.Model):
+    name = models.CharField(max_length=100)
+    products = models.ForeignKey('self', blank=True, null=True, related_name='products_in_store', on_delete=models.SET_DEFAULT, default=False)
+
+    def __str__(self):
+        return self.name.encode('utf-8')
+
+
 class Product(models.Model):
     subcategory = models.ForeignKey(SubCategory, null=True, related_name='product', on_delete=models.PROTECT, limit_choices_to={'is_parent': False})
     id = models.AutoField(primary_key=True)
@@ -49,6 +58,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to=image_path, blank=True)
     description = models.TextField(blank=True)
     price = models.PositiveIntegerField()
+    store = models.ForeignKey(Store, blank=True, null=True, related_name='store', on_delete=models.SET_DEFAULT, default=False)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)

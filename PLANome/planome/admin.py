@@ -14,6 +14,10 @@ class SubCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 admin.site.register(SubCategory, SubCategoryAdmin)
 
+class StoreAdmin(admin.ModelAdmin):
+    list_display = ['name']
+admin.site.register(Store, StoreAdmin)
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'subcategory', 'price', 'stock', 'available', 'created', 'updated']
     list_filter = ['available', 'created', 'updated', 'subcategory']
