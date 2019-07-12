@@ -19,8 +19,8 @@ class StoreAdmin(admin.ModelAdmin):
 admin.site.register(Store, StoreAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'subcategory', 'price', 'stock', 'available', 'created', 'updated']
-    list_filter = ['available', 'created', 'updated', 'subcategory']
-    list_editable = ['price', 'stock', 'available']
+    list_display = ['name', 'slug', 'subcategory', 'price', 'stock', 'available', 'created', 'updated', 'store']
+    list_filter = ['available', 'created', 'updated', 'subcategory', 'store']
+    list_editable = ['price', 'stock', 'available', 'store']
     prepopulated_fields = {'slug': ('name',)}
 admin.site.register(Product, ProductAdmin)
