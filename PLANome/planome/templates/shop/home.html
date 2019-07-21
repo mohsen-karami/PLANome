@@ -19,26 +19,4 @@
     <a href="{{ home_care.get_absolute_url }}"><img class="home-care image" src="{% static "media/image/categories/home-care.png" %}" alt="home-care icon"></a>
     <a class="home-care text" href="{{ home_care.get_absolute_url }}">بهداشت منزل</a>
   </div>
-  <!-- <div id="sidebar">
-    <h3>categories</h3>
-    <ul>
-      {% for category in categories %}
-        <li>
-            <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-            <ul>
-                {% for subcategory in subcategories %}
-                  <li>
-                    <a href="{{ subcategory.get_absolute_url }}">{{ subcategory.name }}</a>
-                    <ul>
-                      {% for minisubcategory in subcategory.parent.all %}
-                          <li><a href="{{ minisubcategory.get_absolute_url }}">{{ minisubcategory.name }}</a></li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% endfor %}
-            </ul>
-        </li>
-      {% endfor %}
-    </ul>
-  </div> -->
 {% endblock %}
