@@ -6,7 +6,9 @@
     {% endblock %}
     <meta charset="utf-8">
     <title>{% block title %}سوپرمارکت اینترنتی پلنوم{% endblock %}</title>
-    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <link href="{% static "css/base-portrait.css" %}" media="(orientation: portrait)" rel="stylesheet" type="text/css">
+    <link href="{% static "css/base-landscape.css" %}" media="(orientation: landscape)" rel="stylesheet" type="text/css">
+    <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.0/dist/font-face.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id="header">
@@ -15,8 +17,8 @@
           <p><span id="cart_items">{{ cart|length }}</span>سبد خرید</p>
         </a>
       </div>
-      <a href="{% url "planome:home_page" %}" id="logo"><img src="{% static "media/image/logo/PLANome-logo.png" %}" alt="planome logo"></a>
-      <a href="#" id="barcode">درخواست کالا</a>
+      <a href="{% url "planome:home_page" %}" id="logo"><img src="{% static "media/image/logo/logo.png" %}" alt="planome logo"></a>
+      <a href="#" id="register">ورود / ثبت‌نام</a>
     </div>
     <a href="#">
       <div id="subheader">
@@ -25,6 +27,14 @@
       </div>
     </a>
     <div id="content">
+      <div class="desktop-version">
+        <img src="{% static "media/image/logo/logo.png" %}" alt="planome logo">
+        <p>نسخه رایانه در حال طراحی می‌باشد.<br>لطفا برای استفاده از فروشگاه از گوشی همراه استفاده نمایید.</p>
+      </div>
+      <div class="mobile-landscape-version">
+        <img src="{% static "media/image/logo/logo.png" %}" alt="planome logo">
+        <p>لطفا گوشی همراه خود را در حالت افقی قرار دهید.</p>
+      </div>
       {% block content %}
       {% endblock %}
     </div>
@@ -45,7 +55,7 @@
       <a href="#"><i class="fab fa-linkedin hollow social"></i></a>
       <a href="#"><i class="fas fa-envelope hollow social"></i></a>
       <hr>
-      <img id="footer-logo" src="{% static "media/image/logo/PLANome-logo-gray.png" %}">
+      <img id="footer-logo" src="{% static "media/image/logo/logo.png" %}">
       <p class="hollow" id="footer-logotext">PLANome</p>
       <a class="hollow footer-textlink" id="faq" href="#">سوالات متداول</a>
       <a class="hollow footer-textlink" id="usage" href="#">شرایط استفاده</a>
