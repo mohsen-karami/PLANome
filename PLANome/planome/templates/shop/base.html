@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>{% block title %}سوپرمارکت اینترنتی پلنوم{% endblock %}</title>
     <link href="{% static "css/base-portrait.css" %}" media="(orientation: portrait)" rel="stylesheet" type="text/css">
-    <link href="{% static "css/base-landscape.css" %}" media="(orientation: landscape)" rel="stylesheet" type="text/css">
+    <link id="landscape" href="{% static "css/base-landscape.css" %}" media="(orientation: landscape)" rel="stylesheet" type="text/css">
     <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.0/dist/font-face.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -63,6 +63,7 @@
       <a class="hollow footer-textlink" id="about" href="#">درباره پلنوم</a>
       <a class="hollow footer-textlink" id="copyleft-text" href="#">Copyleft <span id="copyleft-symbol">&copy;</span> text</a>
     </div>
+    <script src="{% static "js/base.js" %}"></script>
     <script src="https://kit.fontawesome.com/a5a2f71d48.js"></script>
   </body>
 </html>
