@@ -168,6 +168,7 @@ hr {
   margin-top: 0;
   margin-left: 4vw;
   background-color: rgb(0,6,28);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-textlink {
@@ -197,10 +198,12 @@ hr {
 #copyleft-symbol {
   display:inline-block;
   transform: rotate(180deg);
+  font-family: 'Open Sans', sans-serif;
 }
 
 #copyleft-text {
   margin-top: 2vh;
   margin-right: 35vw;
   font-size: 4vw;
+  font-family: 'Open Sans', sans-serif;
 }
