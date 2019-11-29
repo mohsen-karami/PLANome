@@ -38,8 +38,10 @@ class SubCategory(models.Model):
     def get_absolute_url(self):
         return reverse('planome:product_list_by_subcategory', args=[self.slug])
 
-def image_path(instance, filename):
-    return 'image/products/{0}/{1}'.format(instance.id, filename)
+
+def image_path(self, filename):
+    ext = filename.split('.')[-1]
+    return 'image/products/{0}/{1}/{2}/{3}'.format(self.created.year, self.created.month, self.id, 'main.' + ext)
 
 
 class Store(models.Model):
@@ -55,7 +57,7 @@ class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, allow_unicode=True)
-    image = models.ImageField(upload_to=image_path, blank=True)
+    image = models.ImageField(upload_to=image_path, blank=True, null=True)
     description = models.TextField(blank=True)
     price = models.PositiveIntegerField()
     store = models.ForeignKey(Store, blank=True, null=True, related_name='store', on_delete=models.SET_DEFAULT, default=False)
