@@ -2,8 +2,6 @@
 from __future__ import absolute_import, unicode_literals
 
 
-#CELERY_BROKER_URL = 'amqp://guest:guest@localhost//'
-
 
 """
 Django settings for PLANome project.
