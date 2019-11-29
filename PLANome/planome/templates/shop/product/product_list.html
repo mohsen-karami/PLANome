@@ -23,7 +23,12 @@
         </a>
         <a class="product_link" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
         {% if product.available == True %}
-          <p id="num">{{ product.price }} تومان</p>
+          {% if product.off_price %}
+            <p id="price">{{ product.price }} تومان</p>
+            <p id="off_price">{{ product.off_price }} تومان</p>
+          {% else %}
+            <p id="off_price">{{ product.price }} تومان</p>
+          {% endif %}
         {% else %}
           <p id="num">ناموجود</p>
         {% endif %}

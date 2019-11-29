@@ -60,6 +60,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to=image_path, blank=True, null=True)
     description = models.TextField(blank=True)
     price = models.PositiveIntegerField()
+    off_price = models.PositiveIntegerField(blank=True, null=True, default=False)
     store = models.ForeignKey(Store, blank=True, null=True, related_name='store', on_delete=models.SET_DEFAULT, default=False)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)

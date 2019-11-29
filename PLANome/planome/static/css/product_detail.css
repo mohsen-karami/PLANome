@@ -38,6 +38,14 @@
 
 .price {
   text-align: center;
+  font-size: 5vw;
+  color: red;
+  direction: rtl;
+  text-decoration: line-through;
+}
+
+.off_price {
+  text-align: center;
   font-size: 8vw;
   color: rgb(8,128,128);
   direction: rtl;

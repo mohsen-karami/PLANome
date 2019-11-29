@@ -45,7 +45,16 @@
   margin-top: 5vh;
 }
 
-#num {
+#price {
+  position: absolute;
+  color: red;
+  direction: rtl;
+  margin-top: 12vh;
+  margin-left: 40vw;
+  text-decoration: line-through;
+}
+
+#off_price {
   position: absolute;
   color: rgb(8,128,128);
   direction: rtl;
