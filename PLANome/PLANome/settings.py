@@ -130,8 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'planome/static/')
 
-MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'planome/static/media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'planome/media/')
 
 
 CART_SESSION_ID = 'cart'
