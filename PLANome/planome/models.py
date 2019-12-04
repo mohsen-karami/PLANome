@@ -14,7 +14,7 @@ class Category(models.Model):
         verbose_name_plural = 'categories'
 
     def __str__(self):
-        return self.name.encode('utf-8')
+        return self.name
 
     def get_absolute_url(self):
         return reverse('planome:subcategory_list_by_category', args=[self.slug])
@@ -33,7 +33,7 @@ class SubCategory(models.Model):
         verbose_name_plural = 'subcategories'
 
     def __str__(self):
-        return self.name.encode('utf-8')
+        return self.name
 
     def get_absolute_url(self):
         return reverse('planome:product_list_by_subcategory', args=[self.slug])
@@ -49,7 +49,7 @@ class Store(models.Model):
     products = models.ForeignKey('self', blank=True, null=True, related_name='products_in_store', on_delete=models.SET_DEFAULT, default=False)
 
     def __str__(self):
-        return self.name.encode('utf-8')
+        return self.name
 
 
 class Product(models.Model):
@@ -72,7 +72,7 @@ class Product(models.Model):
         index_together = (('id', 'slug'),)
 
     def __str__(self):
-        return self.name.encode('utf-8')
+        return self.name
 
     def get_absolute_url(self):
         return reverse('planome:product_detail', args=[self.id, self.slug])
