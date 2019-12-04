@@ -29,3 +29,7 @@ PLANome/planome/__pycache__
 PLANome/cart/__pycache__
 
 PLANome/orders/__pycache__
+
+PLANome/planome/static/media
+
+PLANome/planome/media
