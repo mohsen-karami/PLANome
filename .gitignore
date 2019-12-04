@@ -21,3 +21,11 @@ PLANome/planome/static/admin
 PLANome/PLANome/__init__.py
 
 PLANome/planome/secretkey.py
+
+PLANome/PLANome/__pycache__
+
+PLANome/planome/__pycache__
+
+PLANome/cart/__pycache__
+
+PLANome/orders/__pycache__
