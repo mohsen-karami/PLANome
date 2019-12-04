@@ -19,3 +19,5 @@ PLANome/planome/migrations
 PLANome/planome/static/admin
 
 PLANome/PLANome/__init__.py
+
+PLANome/planome/secretkey.py
