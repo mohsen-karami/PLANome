@@ -28,6 +28,6 @@ urlpatterns = [
     url(r'^cart/', include(('cart.urls', 'cart'), namespace='cart')),
     url(r'^orders/', include(('orders.urls', 'orders'), namespace='orders')),
     url(r'^', include(('planome.urls', 'planome'), namespace='planome')),
-    url(r'^static/media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
