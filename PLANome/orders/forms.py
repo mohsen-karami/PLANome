@@ -9,10 +9,10 @@ class OrderCreateForm(forms.ModelForm):
         model = Order
         fields = ['first_name', 'last_name', 'email', 'address', 'postal_code', 'phone_number']
         labels = {
-            'first_name': _('نام').encode('utf-8'),
-            'last_name': _('نام خانوادگی').encode('utf-8'),
-            'email': _('ایمیل').encode('utf-8'),
-            'address': _('آدرس').encode('utf-8'),
-            'postal_code': _('کدپستی').encode('utf-8'),
-            'phone_number': _('شماره تماس').encode('utf-8'),
+            'first_name': _('نام'),
+            'last_name': _('نام خانوادگی'),
+            'email': _('ایمیل'),
+            'address': _('آدرس'),
+            'postal_code': _('کدپستی'),
+            'phone_number': _('شماره تماس'),
         }
