@@ -33,3 +33,27 @@ PLANome/orders/__pycache__
 PLANome/planome/static/media
 
 PLANome/planome/media
+
+PLANome/PLANome/__init__.pyc
+
+PLANome/PLANome/settings.pyc
+
+PLANome/cart/__init__.pyc
+
+PLANome/cart/admin.pyc
+
+PLANome/cart/models.pyc
+
+PLANome/orders/__init__.pyc
+
+PLANome/orders/admin.pyc
+
+PLANome/orders/models.pyc
+
+PLANome/planome/__init__.pyc
+
+PLANome/planome/admin.pyc
+
+PLANome/planome/models.pyc
+
+PLANome/planome/secretkey.pyc
