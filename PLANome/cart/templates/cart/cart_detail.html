@@ -30,5 +30,5 @@
     <hr>
     <p id="sum_total_num">مجموع قیمت سبد خرید: {{ cart.get_total_price }} تومان</p>
   </div>
-  <a id="button" href="{% url "orders:order_create" %}"><div class="button-text">ثبت سفارش</div></a>
+  <a id="button" href="{% url "orders:order_authenticate" %}"><div class="button-text">ثبت سفارش</div></a>
 {% endblock %}
