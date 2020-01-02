@@ -11,14 +11,16 @@
 
 {% block content %}
   <div class="order-info">
-    <h3>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</h3>
-    <p>
-      لطفا مشخصات خود را وارد نمایید.
-      <br>
-      برای تایید اطلاعات با شما تماس گرفته خواهد شد.
-    </p>
+    <h3>جزئیات سبد خرید</h3>
+    <ul>
+      {% for item in cart %}
+        <li><i class="fas fa-shopping-cart"></i>{{ item.quantity }} عدد {{ item.product.name }} به قیمت {{ item.total_price }} تومان</li>
+        <br>
+      {% endfor %}
+    </ul>
+    <p>مجموع قیمت سبد خرید: {{ cart.get_total_price }} تومان</p>
   </div>
-  <form class="order-form" action="/orders/create/" method="post">
+  <form class="order-form" action="." method="post">
     {{ form.as_p }}
     <p id="button"><input type="submit" value="ثبت سفارش"></p>
     {% csrf_token %}
