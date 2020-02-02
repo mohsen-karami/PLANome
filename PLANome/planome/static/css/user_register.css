@@ -1,0 +1,45 @@
+.order-info {
+  margin-top: 16vh;
+  direction: rtl;
+  margin-bottom: 10vh;
+  padding: 2vh 0;
+  box-shadow: inset 0 0 1vw black;
+  background-color: rgba(2,88,128,0.1);
+}
+h3 {
+  color: rgb(2,88,128);
+  font-size: 5vw;
+  text-align: center;
+  margin-top: -1vh;
+}
+ul {
+  list-style: none;
+  font-size: 3.5vw;
+  color: rgb(6,49,66);
+}
+
+.order-info p {
+  text-align: center;
+  color: rgb(2,88,128);
+}
+
+form {
+  direction: rtl;
+  height: 50vh;
+}
+
+input {
+  position: absolute;
+  width: 50vw;
+  left: 10vw;
+}
+
+#button {
+  position: absolute;
+  left: 12.5vw;
+  margin-top: 10vh;
+}
+
+form p {
+  margin-right: 10vw;
+}

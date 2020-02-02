@@ -1,0 +1,28 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static "/css/user_register.css" %}">
+{% endblock %}
+
+{% block title %}
+  ثبت نام | سوپرمارکت اینترنتی پلنوم
+{% endblock %}
+
+{% block content %}
+  <div class="order-info">
+    {% if phone_number %}
+      <h3>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</h3>
+    {% endif %}
+    <p>
+      لطفا مشخصات خود را وارد نمایید.
+      <br>
+      برای تایید اطلاعات با شما تماس گرفته خواهد شد.
+    </p>
+  </div>
+  <form class="order-form" action="." method="post">
+    {{ form.as_p }}
+    <p id="button"><input type="submit" value="ثبت نام"></p>
+    {% csrf_token %}
+  </form>
+{% endblock %}

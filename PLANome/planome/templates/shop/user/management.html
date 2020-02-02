@@ -1,0 +1,15 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static "/css/user_management.css" %}">
+{% endblock %}
+
+{% block title %}
+  ثبت نام | سوپرمارکت اینترنتی پلنوم
+{% endblock %}
+
+{% block content %}
+  <h3>{{ customer }}</h3>
+  <a href="/user/exit">خروج</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+h3 {
+  color: rgb(2,88,128);
+  font-size: 4vw;
+  text-align: center;
+  margin-top: 20vh;
+  margin-bottom: 7vh;
+}
+
+form {
+  direction: rtl;
+  height: 30vh;
+}
+
+input {
+  width: 50vw;
+}
+
+#button {
+  position: absolute;
+  left: 20vw;
+}
+
+form p {
+  margin-right: 10vw;
+}
