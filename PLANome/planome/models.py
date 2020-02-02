@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MinLengthValidator
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -84,6 +85,7 @@ class Customer(models.Model):
     address = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=100)
+    password = models.CharField(validators=[MinLengthValidator(6)], max_length=12)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

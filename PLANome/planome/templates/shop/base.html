@@ -20,7 +20,11 @@
         </a>
       </div>
       <a href="{% url "planome:home_page" %}" id="logo"><img src="{% static "media/image/logo/logo.png" %}" alt="planome logo"></a>
-      <a href="#" id="register">ورود / ثبت‌نام</a>
+      {% if customer %}
+        <a href="{% url "planome:user_management" %}" id="register">{{ customer }}</a>
+      {% else %}
+        <a href="{% url "planome:user_authenticate" %}" id="register">ورود / ثبت‌نام</a>
+      {% endif %}
     </div>
     <a href="#">
       <div id="subheader">
