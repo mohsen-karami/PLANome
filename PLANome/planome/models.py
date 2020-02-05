@@ -56,6 +56,8 @@ class Store(models.Model):
 class Product(models.Model):
     subcategory = models.ForeignKey(SubCategory, null=True, related_name='product', on_delete=models.PROTECT, limit_choices_to={'is_parent': False})
     id = models.AutoField(primary_key=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, allow_unicode=True)
     image = models.ImageField(upload_to=image_path, blank=True, null=True)
@@ -65,8 +67,6 @@ class Product(models.Model):
     store = models.ForeignKey(Store, blank=True, null=True, related_name='store', on_delete=models.SET_DEFAULT, default=False)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ('-created',)
