@@ -34,9 +34,29 @@ PLANome/planome/static/media
 
 PLANome/planome/media
 
+#pyc
+
 PLANome/PLANome/__init__.pyc
 
 PLANome/PLANome/settings.pyc
+
+PLANome/planome/__init__.pyc
+
+PLANome/PLANome/wsgi.pyc
+
+PLANome/PLANome/urls.pyc
+
+PLANome/planome/admin.pyc
+
+PLANome/planome/models.pyc
+
+PLANome/planome/secretkey.pyc
+
+PLANome/planome/views.pyc
+
+PLANome/planome/urls.pyc
+
+PLANome/planome/context_processors.pyc
 
 PLANome/cart/__init__.pyc
 
@@ -44,16 +64,24 @@ PLANome/cart/admin.pyc
 
 PLANome/cart/models.pyc
 
+PLANome/cart/cart.pyc
+
+PLANome/cart/context_processors.pyc
+
+PLANome/cart/forms.pyc
+
+PLANome/cart/urls.pyc
+
+PLANome/cart/views.pyc
+
 PLANome/orders/__init__.pyc
 
 PLANome/orders/admin.pyc
 
 PLANome/orders/models.pyc
 
-PLANome/planome/__init__.pyc
+PLANome/orders/forms.pyc
 
-PLANome/planome/admin.pyc
+PLANome/orders/urls.pyc
 
-PLANome/planome/models.pyc
-
-PLANome/planome/secretkey.pyc
+PLANome/orders/views.pyc
