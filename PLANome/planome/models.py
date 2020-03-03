@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.urls import reverse
 from django.core.validators import MinLengthValidator
+from django.conf import settings
 import os
 
 class Category(models.Model):
@@ -43,7 +44,10 @@ class SubCategory(models.Model):
 
 def image_path(self, filename):
     ext = os.path.splitext(filename)[1]
-    return 'image/products/{0}/{1}/{2}/{3}'.format(self.created.year, self.created.month, self.id, 'main.' + ext)
+    filePath = 'image/products/' + str(self.created.year) + '/' + str(self.created.month) + '/' + str(self.id) + '/' + 'main'+ ext
+    if os.path.isfile(settings.MEDIA_ROOT + filePath):
+        os.remove(settings.MEDIA_ROOT + filePath)
+    return filePath
 
 
 class Store(models.Model):
