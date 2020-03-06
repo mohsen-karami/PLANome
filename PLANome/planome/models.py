@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.core.validators import MinLengthValidator
 from django.conf import settings
+from django.db.models.signals import post_save
 import os
 
 class Category(models.Model):
@@ -83,6 +84,15 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('planome:product_detail', args=[self.id, self.slug])
 
+def update_image(sender, instance, **kwargs):
+    if len(str(instance.image).split('None')) == 2:
+        os.makedirs(settings.MEDIA_ROOT + str(instance.image).split('None')[0] + str(instance.id))
+        os.rename(settings.MEDIA_ROOT + str(instance.image), settings.MEDIA_ROOT + str(instance.image).split('None')[0] + str(instance.id) + str(instance.image).split('None')[1])
+        os.rmdir(settings.MEDIA_ROOT + str(instance.image).split('None')[0] + 'None')
+        instance.image = str(instance.image).split('None')[0] + str(instance.id) + str(instance.image).split('None')[1]
+        instance.save()
+
+post_save.connect(update_image, sender=Product)
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)
