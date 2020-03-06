@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, SubCategory, Product, Customer
 from cart.forms import CartAddProductForm
 from orders.forms import OrderAuthenticateForm, OrderCreateForm
@@ -117,4 +117,4 @@ def user_management(request):
 
 def user_exit(request):
     del request.session['customer']
-    return render(request, 'shop/home.html')
+    return redirect('/')
