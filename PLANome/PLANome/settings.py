@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'planome',
     'cart',
     'orders',
+    'customer',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart',
-                'planome.context_processors.customer'
+                'customer.context_processors.customer'
             ],
         },
     },

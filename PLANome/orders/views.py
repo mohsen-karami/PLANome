@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 from django.shortcuts import render
 from .models import OrderItem, Order
-from planome.models import Customer
+from customer.models import Customer
 from .forms import OrderCreateForm, OrderAuthenticateForm
 from django.contrib.auth.hashers import make_password, check_password
 from cart.cart import Cart

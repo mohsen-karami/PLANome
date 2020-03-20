@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static "/css/user_register.css" %}">
+  <link rel="stylesheet" href="{% static "/css/customer_register.css" %}">
 {% endblock %}
 
 {% block title %}
@@ -20,7 +20,7 @@
       برای تایید اطلاعات با شما تماس گرفته خواهد شد.
     </p>
   </div>
-  <form class="order-form" action="/user/register/" method="post">
+  <form class="order-form" action="/customer/register/" method="post">
     {{ form.as_p }}
     <p id="button"><input type="submit" value="ثبت نام"></p>
     {% csrf_token %}

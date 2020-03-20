@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from django import forms
-from planome.models import Customer
+from customer.models import Customer
 from django.utils.translation import ugettext_lazy as _
 
 class OrderAuthenticateForm(forms.ModelForm):

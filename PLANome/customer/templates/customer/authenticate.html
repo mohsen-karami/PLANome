@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static "/css/user_authenticate.css" %}">
+  <link rel="stylesheet" href="{% static "/css/customer_authenticate.css" %}">
 {% endblock %}
 
 {% block title %}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <h3>.در صورتی که حساب کاربری ندارید ابتدا <a href="{% url 'planome:user_register' %}">ثبت نام</a> کنید</h3>
+  <h3>.در صورتی که حساب کاربری ندارید ابتدا <a href="{% url 'customer:customer_register' %}">ثبت نام</a> کنید</h3>
   <form class="order-form" action="." method="post">
     {{ form.as_p }}
     <p id="button"><input type="submit" value="ورود"></p>

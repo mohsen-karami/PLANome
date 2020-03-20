@@ -1,5 +1,6 @@
 from django.db import models
-from planome.models import Product, Customer
+from planome.models import Product
+from customer.models import Customer
 
 
 class Order(models.Model):
