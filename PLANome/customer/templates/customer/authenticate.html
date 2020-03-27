@@ -11,7 +11,7 @@
 
 {% block content %}
   <h3>.در صورتی که حساب کاربری ندارید ابتدا <a href="{% url 'customer:customer_register' %}">ثبت نام</a> کنید</h3>
-  <form class="order-form" action="." method="post">
+  <form class="order-form" action="/customer/authenticate/" method="post">
     {{ form.as_p }}
     <p id="button"><input type="submit" value="ورود"></p>
     {% csrf_token %}
