@@ -15,13 +15,9 @@ def order_authenticate(request):
             customer = Customer.objects.filter(phone_number=request.POST['phone_number'])
             if customer:
                 if check_password(form.cleaned_data['password'], customer[0].password):
-                    order = Order.objects.create(customer=customer[0])
-                    for item in cart:
-                        OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-                    cart.clear()
                     request.session['customer'] = customer[0]
                     request.session.save()
-                    return render(request, 'orders/order/created.html', {'order': order, 'customer': customer[0]})
+                    return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer[0]})
                 else:
                     form = OrderAuthenticateForm()
                     return render(request, 'orders/order/authenticate.html', {'cart': cart, 'form': form})
@@ -33,11 +29,7 @@ def order_authenticate(request):
     else:
         if 'customer' in request.session:
             customer = request.session['customer']
-            order = Order.objects.create(customer=customer)
-            for item in cart:
-                OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-            cart.clear()
-            return render(request, 'orders/order/created.html', {'order': order, 'customer': customer})
+            return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer})
         else:
             form = OrderAuthenticateForm()
     return render(request, 'orders/order/authenticate.html', {'cart': cart, 'form': form})
@@ -52,16 +44,12 @@ def order_create(request):
             if customer:
                 formPassword = make_password(form.cleaned_data['password'])
                 if formPassword == customer[0].password:
-                    order = Order.objects.create(customer=customer)
-                    for item in cart:
-                        OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-                    cart.clear()
                     request.session['customer'] = customer[0]
                     request.session.save()
-                    return render(request, 'orders/order/created.html', {'order': order, 'customer': customer})
+                    return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer})
                 else:
                     form = OrderAuthenticateForm()
-                    return render(request, 'orders/order/create.html', {'form': form})
+                    return render(request, 'orders/order/authenticate.html', {'form': form})
             else:
                 if form.cleaned_data['password'] == form.cleaned_data['rePassword']:
                     formPassword = make_password(form.cleaned_data['password'])
@@ -70,11 +58,7 @@ def order_create(request):
                     customer.save()
                     request.session['customer'] = customer
                     request.session.save()
-                    order = Order.objects.create(customer=customer)
-                    for item in cart:
-                        OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-                    cart.clear()
-                    return render(request, 'orders/order/created.html', {'order': order, 'customer': customer})
+                    return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer})
                 else:
                     form = OrderCreateForm(request.POST)
                     return render(request, 'orders/order/create.html', {'form': form})
@@ -83,3 +67,12 @@ def order_create(request):
     else:
         form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'form': form})
+
+def order_created(request):
+    cart = Cart(request)
+    customer = request.session['customer']
+    order = Order.objects.create(customer=customer)
+    for item in cart:
+        OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
+    cart.clear()
+    return render(request, 'orders/order/created.html', {'order': order, 'customer': customer})

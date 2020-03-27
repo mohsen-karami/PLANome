@@ -1,0 +1,24 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static "/css/cart_review.css" %}">
+{% endblock %}
+
+{% block title %}
+  ثبت سفارش | سوپرمارکت اینترنتی پلنوم
+{% endblock %}
+
+{% block content %}
+  <div class="order-info">
+    <h3>جزئیات سبد خرید</h3>
+    <ul>
+      {% for item in cart %}
+        <li><i class="fas fa-shopping-cart"></i>{{ item.quantity }} عدد {{ item.product.name }} به قیمت {{ item.total_price }} تومان</li>
+        <br>
+      {% endfor %}
+    </ul>
+    <p>مجموع قیمت سبد خرید: {{ cart.get_total_price }} تومان</p>
+  </div>
+  <a id="button" href="{% url "orders:order_created" %}"><div class="button-text">تایید و ثبت سفارش</div></a>
+{% endblock %}

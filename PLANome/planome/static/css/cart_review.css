@@ -29,27 +29,14 @@ ul {
   font-size: 4vw;
 }
 
-form {
-  direction: rtl;
-  height: 50vh;
-}
-
-input {
-  position: absolute;
-  width: 50vw;
-  left: 10vw;
-}
-
 #button {
-  position: absolute;
-  left: 12.5vw;
-  margin-top: 10vh;
+  text-decoration: none;
+  color: #fff;
+  font-size: 5vw;
+  text-align: center;
 }
 
-form p {
-  margin-right: 10vw;
-}
-
-.order-form {
-  margin-top: 30vh;
+.button-text {
+  background-color: rgb(6,49,66);
+  padding: 2.5vh 0;
 }
