@@ -85,3 +85,11 @@ PLANome/orders/forms.pyc
 PLANome/orders/urls.pyc
 
 PLANome/orders/views.pyc
+
+PLANome/customer/__pycache__
+
+PLANome/customer/migrations
+
+PLANome/search/__pycache__
+
+PLANome/search/migrations
