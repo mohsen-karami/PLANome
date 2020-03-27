@@ -65,3 +65,12 @@
   background-color: rgb(6,49,66);
   padding: 2.5vh 0;
 }
+
+#disabled {
+  text-decoration: none;
+  color: rgba(0, 6, 28, 0.5);
+  font-size: 5vw;
+  text-align: center;
+  background-color: rgba(0, 6, 28, 0.3);
+  padding: 2.5vh 0;
+}
