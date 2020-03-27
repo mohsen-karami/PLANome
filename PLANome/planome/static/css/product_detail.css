@@ -59,7 +59,7 @@ h2 {
   margin-right: 8vw;
 }
 
-form input {
+#addToCart {
   background-color: rgb(2,88,128);
   color: #fff;
   border-radius: 100vw;
@@ -67,6 +67,6 @@ form input {
   padding: 1vh 5vw;
 }
 
-form {
+#form {
   margin-left: 20vw;
 }

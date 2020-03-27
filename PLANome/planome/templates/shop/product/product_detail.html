@@ -25,10 +25,10 @@
       {% else %}
         <p class="off_price">{{ product.price }} تومان</p>
       {% endif %}
-      <form action="{% url "cart:cart_add" product.id %}" method="post">
+      <form id="form" action="{% url "cart:cart_add" product.id %}" method="post">
         {{ cart_product_form }}
         {% csrf_token %}
-        <input type="submit" value="افزودن به سبد خرید">
+        <input id="addToCart" type="submit" value="افزودن به سبد خرید">
       </form>
     {% else %}
       <p class="price">ناموجود</p>

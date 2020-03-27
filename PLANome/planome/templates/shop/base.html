@@ -26,12 +26,11 @@
         <a href="{% url "customer:customer_authenticate" %}" id="register">ورود / ثبت‌نام</a>
       {% endif %}
     </div>
-    <a href="#">
-      <div id="subheader">
-        <p>جستجوی پیشرفته</p>
-        <i class="fas fa-angle-left" id="search-arrow"></i>
-      </div>
-    </a>
+    <form id="subheader" action="{% url "search:search_form" %}" method="post">
+      {% csrf_token %}
+      <input id="searchBox" type="text" name="search_unit" value="{{ search_term }}" placeholder="search here">
+      <input id="searchButton" type="submit" name="submit" value="Search"/>
+    </form>
     <div id="content">
       <div class="desktop-version">
         <img src="{% static "media/image/logo/logo.png" %}" alt="planome logo">

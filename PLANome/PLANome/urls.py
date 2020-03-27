@@ -31,4 +31,5 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     url(r'^customer/', include(('customer.urls', 'customer'), namespace='customer')),
+    url(r'^search/', include(('search.urls', 'search'), namespace='search')),
 ]

@@ -1,0 +1,34 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/searchField.css" %}">
+{% endblock %}
+
+{% block title %}
+  سوپرمارکت اینترنتی پلنوم | نتایج جستجو برای واژه {{ search_unit }}
+{% endblock %}
+
+{% block content %}
+  <div class="product_list">
+    {% for product in products %}
+      <div class="item">
+        <a href="{{ product.get_absolute_url }}">
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'media/image/no_image_available/no_image_available.png' %}{% endif %}" alt="an image of {{ product.name }}">
+        </a>
+        <a class="product_link" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        {% if product.available == True %}
+          {% if product.off_price %}
+            <p id="price">{{ product.price }} تومان</p>
+            <p id="off_price">{{ product.off_price }} تومان</p>
+          {% else %}
+            <p id="off_price">{{ product.price }} تومان</p>
+          {% endif %}
+        {% else %}
+          <p id="num">ناموجود</p>
+        {% endif %}
+        <a href="{{ product.get_absolute_url }}"><i class="fas fa-angle-left" id="enter"></i></a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

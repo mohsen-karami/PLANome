@@ -5,7 +5,7 @@ body {
   background-color: rgb(0,6,28);
 }
 
-#header, #subheader, #footer, #features, #banner, .categories, .subcategories, .product_list, .product_detail, .mobile-landscape-version {
+#header, #subheader, #footer, #features, #banner, .categories, .subcategories, .product_list, .product_detail, .mobile-landscape-version, #searchBox, #searchButton {
   display: none;
 }
 

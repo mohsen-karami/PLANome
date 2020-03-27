@@ -61,28 +61,28 @@ body {
 #subheader {
   width: 100vw;
   height: 6vh;
-  background-color: #fff;
+  background-color: rgb(0,6,28);
   position: fixed;
   top: 10vh;
   box-shadow: 0 0 1vw #000;
   z-index: 11;
 }
 
-#subheader p {
-  color: #000;
-  font-size: 5vw;
+#searchBox {
+  width: 70vw;
+  height: 3vh;
   position: fixed;
-  top: 8vh;
-  right: 4vw;
-  font-weight: bold;
+  top: 11vh;
+  left: 5vw;
+  background-color: #fff;
 }
 
-#search-arrow {
-  color: rgb(2,88,128);
+#searchButton {
+  width: 15vw;
+  height: 3vh;
   position: fixed;
-  left: 5vw;
-  top: 11.5vh;
-  font-size: 6vw;
+  top: 11vh;
+  left: 80vw;
 }
 
 #features {
