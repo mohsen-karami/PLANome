@@ -42,11 +42,10 @@ def order_create(request):
         if form.is_valid():
             customer = Customer.objects.filter(phone_number=request.POST['phone_number'])
             if customer:
-                formPassword = make_password(form.cleaned_data['password'])
-                if formPassword == customer[0].password:
+                if check_password(form.cleaned_data['password'], customer[0].password):
                     request.session['customer'] = customer[0]
                     request.session.save()
-                    return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer})
+                    return render(request, 'orders/order/cart_review.html', {'cart': cart, 'customer': customer[0]})
                 else:
                     form = OrderAuthenticateForm()
                     return render(request, 'orders/order/authenticate.html', {'form': form})
