@@ -19,6 +19,10 @@ class StoreAdmin(admin.ModelAdmin):
 admin.site.register(Store, StoreAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
+    class Media:
+        css = {
+             'all': ('css/admin/product.css',)
+        }
     list_display = ['name', 'subcategory', 'price', 'off_price', 'stock', 'available', 'store']
     list_filter = ['available', 'created', 'updated', 'subcategory', 'store']
     search_fields = ('name',)
