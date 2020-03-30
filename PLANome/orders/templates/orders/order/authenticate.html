@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <form class="order-form" action="." method="post">
+  <form class="order-form" action="/orders/authenticate/" method="post">
     {{ form.as_p }}
     <p id="button"><input type="submit" value="ثبت سفارش"></p>
     {% csrf_token %}
