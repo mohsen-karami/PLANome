@@ -1,42 +1,70 @@
-.order-info {
-  margin-top: 16vh;
-  direction: rtl;
-  margin-bottom: 10vh;
-  padding: 2vh 0;
-  box-shadow: inset 0 0 1vw black;
-  background-color: rgba(2,88,128,0.1);
-}
-h3 {
-  color: rgb(2,88,128);
-  font-size: 5vw;
-  text-align: center;
-  margin-top: -1vh;
-}
-ul {
-  list-style: none;
-  font-size: 3.5vw;
-  color: rgb(6,49,66);
+table {
+  width: 90vw;
+  height: auto;
+  display: block;
+  margin: 500px auto 50px auto;
 }
 
-.order-info p {
+table, thead, tbody, tr, td {
+  border: rgba(0,6,28,0.1) solid 1px;
+}
+
+thead, tbody {
+    width: 100%;
+    display: block;
+}
+
+thead {
+  background-color: rgba(6,49,66,0.8);
+  padding: 10px 0;
+  font-size: 50px;
+  color: #fff;
+}
+
+tbody {
+  font-size: 35px;
+}
+
+tr, td {
+  display: block;
+  list-style: none;
+}
+
+thead td {
   text-align: center;
-  color: rgb(2,88,128);
+}
+
+tbody td {
+  padding: 50px 0;
+  text-align: center;
+  direction: rtl;
+}
+
+tbody td:first-child {
+  width: 100px;
+  float: right;
+}
+
+tbody td:last-child {
+  width: calc(100% - 100px);
 }
 
 .fa-shopping-cart {
   color: rgb(8,128,128);
-  margin-left: 2vw;
-  font-size: 4vw;
+  font-size: 40px;
 }
 
 #button {
   text-decoration: none;
   color: #fff;
-  font-size: 5vw;
+  font-size: 50px;
   text-align: center;
 }
 
 .button-text {
+  position: sticky;
+  top: 100%;
+  width: 100vw;
   background-color: rgb(6,49,66);
-  padding: 2.5vh 0;
+  padding: 52px 0;
 }

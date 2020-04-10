@@ -1,25 +1,50 @@
 h3 {
   color: rgb(2,88,128);
-  font-size: 4vw;
+  font-size: 40px;
   text-align: center;
-  margin-top: 20vh;
-  margin-bottom: 7vh;
+  margin-top: 270px;
+  padding-top: 200px;
+  margin-bottom: 200px;
 }
 
-form {
+h3 a {
+  color: rgb(6,49,66);
+  text-decoration: none;
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.order-form {
+  width: 90vw;
   direction: rtl;
-  height: 30vh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-input {
-  width: 50vw;
+.order-form p {
+  margin-bottom: 100px;
+  text-align: left;
+  margin-left: 5vw;
 }
 
-#button {
-  position: absolute;
-  left: 20vw;
+.order-form p label {
+  color: rgba(0,6,28, 0.7);
+  margin-left: 50px;
+  font-size: 35px;
 }
 
-form p {
-  margin-right: 10vw;
+.order-form p input {
+  width: calc(90vw - 350px);
+  border-radius: 10px;
+  font-size: 35px;
+}
+
+#button input {
+  background-color: rgb(6,49,66);
+  border-radius: 10px;
+  font-size: 40px;
+  height: 80px;
+  width: 80vw;
+  color: #fff;
 }

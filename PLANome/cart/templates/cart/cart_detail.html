@@ -3,6 +3,13 @@
 
 {% block css %}
   <link rel="stylesheet" href="{% static "css/cart_detail.css" %}">
+  {% if cart %}
+    <style>
+      #footer {
+        margin-bottom: 180px;
+      }
+    </style>
+  {% endif %}
 {% endblock %}
 
 {% block title %}
@@ -10,29 +17,58 @@
 {% endblock %}
 
 {% block content %}
-  <div class="cart">
-    {% for item in cart %}
-      {% with product=item.product %}
-        <a href="{{ product.get_absolute_url }}">
-          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'media/image/no_image_available/no_image_available.png' %}{% endif %}" alt="an image of {{ product.name }}">
-        </a>
-        <a class="product_link" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-        <p id="num">{{ item.price }} تومان</p>
-        <form action="{% url "cart:cart_add" product.id %}" method="post">
-          {{ item.update_quantity_form.quantity }}
-          {{ item.update_quantity_form.update }}
-          {% csrf_token %}
-        </form>
-        <a href="{% url "cart:cart_remove" product.id %}"><i class="fas fa-times"></i></a>
-        <p id="total_num">قیمت نهایی: {{ item.total_price }} تومان</p>
-      {% endwith %}
-    {% endfor %}
-    <hr>
-    <p id="sum_total_num">مجموع قیمت سبد خرید: {{ cart.get_total_price }} تومان</p>
-  </div>
   {% if cart %}
+    <div class="cart">
+      {% for item in cart %}
+        {% with product=item.product %}
+          <div class="product">
+            <a href="{{ product.get_absolute_url }}">
+              <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'media/image/no_image_available/no_image_available.png' %}{% endif %}" alt="an image of {{ product.name }}">
+            </a>
+            <a class="product_link" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            {% if product.off_price %}
+              <p class="old price">{{ product.price }} تومان</p>
+              <p class="new price">{{ product.off_price }} تومان</p>
+            {% else %}
+              <p class="price">{{ item.price }} تومان</p>
+            {% endif %}
+            <form action="{% url "cart:cart_add" product.id %}" method="post">
+              {{ item.update_quantity_form.quantity }}
+              {{ item.update_quantity_form.update }}
+              {% csrf_token %}
+            </form>
+            <a href="{% url "cart:cart_remove" product.id %}"><i class="fas fa-times"></i></a>
+            {% if product.off_price %}
+              <p id="total_price">{{ item.total_off_price }} تومان</p>
+            {% else %}
+              <p id="total_price">{{ item.total_price }} تومان</p>
+            {% endif %}
+          </div>
+        {% endwith %}
+      {% endfor %}
+      <div class="total_price">
+        <table>
+          <tr>
+            <td><p class="total original_price">{{ cart.get_total_price }} تومان</p></td>
+            <td><p class="total original_price">مجموع قیمت سبد خرید:</p></td>
+          </tr>
+          <tr>
+            <td><p class="total off_price">{{ cart.get_total_off_price }} تومان</p></td>
+            <td><p class="total off_price">تخفیف پلنوم به شما:</p></td>
+          </tr>
+          <tr>
+            <td><p class="total final_price">{{ cart.get_total_final_price }} تومان</p></td>
+            <td><p class="total final_price">مبلغ پرداختی:</p></td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <a id="button" href="{% url "orders:order_authenticate" %}"><div class="button-text">ثبت سفارش</div></a>
   {% else %}
+    <div class="emptyCart">
+      <img src="{% static "media/image/icon/empty_cart.png" %}" alt="cart is empty">
+      <p>!سبد خرید شما خالی است</p>
+    </div>
     <div id="disabled">ثبت سفارش</div>
   {% endif %}
 {% endblock %}

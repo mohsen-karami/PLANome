@@ -12,13 +12,10 @@
 {% block content %}
   <div class="subcategories">
     {% for subcategory in subcategories %}
-      {% if forloop.counter|divisibleby:2 %}
-        <a href="{{ subcategory.get_absolute_url }}"><img class="subcategory-left image" src="{% static "media/image/subcategories/"|add:subcategory.slug|add:".png" %}" alt="تصویری از {{ subcategory.name }}"></a>
-        <a class="subcategory-left text" href="{{ subcategory.get_absolute_url }}">{{ subcategory.name }}</a>
-      {% else %}
-      <a href="{{ subcategory.get_absolute_url }}"><img class="subcategory-right image" src="{% static "media/image/subcategories/"|add:subcategory.slug|add:".png" %}" alt="تصویری از {{ subcategory.name }}"></a>
-      <a class="subcategory-right text" href="{{ subcategory.get_absolute_url }}">{{ subcategory.name }}</a>
-      {% endif %}
+      <div class="subcategory">
+        <a href="{{ subcategory.get_absolute_url }}"><img src="{% static "media/image/subcategories/"|add:subcategory.slug|add:".png" %}" alt="تصویری از {{ subcategory.name }}"></a>
+        <a class="text" href="{{ subcategory.get_absolute_url }}">{{ subcategory.name }}</a>
+      </div>
     {% endfor %}
   </div>
 {% endblock %}

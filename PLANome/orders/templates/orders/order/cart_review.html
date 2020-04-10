@@ -10,15 +10,36 @@
 {% endblock %}
 
 {% block content %}
-  <div class="order-info">
-    <h3>جزئیات سبد خرید</h3>
-    <ul>
+  <table>
+    <thead>
+      <tr>
+        <td>جزئیات سبد خرید</td>
+      </tr>
+    </thead>
+    <tbody>
       {% for item in cart %}
-        <li><i class="fas fa-shopping-cart"></i>{{ item.quantity }} عدد {{ item.product.name }} به قیمت {{ item.total_price }} تومان</li>
-        <br>
+        <tr>
+          <td><li><i class="fas fa-shopping-cart"></i></td>
+          <td>{{ item.quantity }} عدد {{ item.product.name }} به قیمت {{ item.total_price }} تومان</td>
+        </tr>
       {% endfor %}
-    </ul>
-    <p>مجموع قیمت سبد خرید: {{ cart.get_total_price }} تومان</p>
-  </div>
+      <tr>
+        <td style="width: 50%; height: 20px; padding:0; background-color: rgba(0,6,28,0.7);"></td>
+        <td style="width: 50%; height: 20px; padding:0; background-color: rgba(0,6,28,0.7);"></td>
+      </tr>
+      <tr>
+        <td style="width: 50%; color: rgba(0,6,28,0.8); font-size: 40px; font-weight: 500;">مجموع قیمت سبد خرید:</td>
+        <td style="width: 50%; color: rgba(0,6,28,0.8); font-size: 40px; font-weight: 500;">{{ cart.get_total_price }} تومان</td>
+      </tr>
+      <tr>
+        <td style="width: 50%; color: rgb(128,0,6); font-size: 40px; font-weight: 500;">تخفیف پلنوم به شما:</td>
+        <td style="width: 50%; color: rgb(128,0,6); font-size: 40px; font-weight: 500;">{{ cart.get_total_off_price }} تومان</td>
+      </tr>
+      <tr>
+        <td style="width: 50%; color: rgb(8,128,128); font-size: 40px; font-weight: 500;">مبلغ پرداختی:</td>
+        <td style="width: 50%; color: rgb(8,128,128); font-size: 40px; font-weight: 500;">{{ cart.get_total_final_price }} تومان</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="button" href="{% url "orders:order_created" %}"><div class="button-text">تایید و ثبت سفارش</div></a>
 {% endblock %}

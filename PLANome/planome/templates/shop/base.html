@@ -5,10 +5,10 @@
     {% block css %}
     {% endblock %}
     <meta charset="utf-8">
+    <script src="{% static "js/base.js" %}"></script>
     <title>{% block title %}سوپرمارکت اینترنتی پلنوم{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'media/image/icon/icon.png' %}">
-    <link href="{% static "css/base-portrait.css" %}" media="(orientation: portrait)" rel="stylesheet" type="text/css">
-    <link id="landscape" href="{% static "css/base-landscape.css" %}" media="(orientation: landscape)" rel="stylesheet" type="text/css">
+    <link href="{% static "css/base.css" %}" rel="stylesheet" type="text/css">
     <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.0/dist/font-face.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
@@ -28,30 +28,22 @@
     </div>
     <form id="subheader" action="{% url "search:search_form" %}" method="post">
       {% csrf_token %}
-      <input id="searchBox" type="text" name="search_unit" value="{{ search_term }}" placeholder="search here">
-      <input id="searchButton" type="submit" name="submit" value="Search"/>
+      <input id="searchBox" type="text" name="search_unit" value="{{ search_term }}" placeholder="       کالای مورد نظر را جستجو نمایید">
+      <input id="searchButton" type="submit" name="submit" value="جستجو"/>
     </form>
     <div id="content">
-      <div class="desktop-version">
-        <img src="{% static "media/image/logo/logo.png" %}" alt="planome logo">
-        <p>نسخه رایانه در حال طراحی می‌باشد.<br>لطفا برای استفاده از فروشگاه از گوشی همراه استفاده نمایید.</p>
-      </div>
-      <div class="mobile-landscape-version">
-        <img src="{% static "media/image/logo/logo.png" %}" alt="planome logo">
-        <p>لطفا گوشی همراه خود را در حالت عمودی قرار دهید.</p>
-      </div>
       {% block content %}
       {% endblock %}
     </div>
     <div id="features">
+      <i class="fas fa-history features-icon-list"></i>
+      <p class="features-text-list" id="reject-product">ضمانت بازگشت کالا تا 24 ساعت</p>
+      <i class="fas fa-angle-left features-list-arrow"></i>
       <i class="fas fa-money-check-alt features-icon-list"></i>
       <p class="features-text-list">امکان پرداخت در محل پس از دریافت سفارش</p>
       <i class="fas fa-angle-left features-list-arrow"></i>
       <i class="fas fa-truck features-icon-list"></i>
-      <p class="features-text-list" id="free-shipping">ارسال رایگان برای خریدهای بیشتر از یک صد هزار تومان</p>
-      <i class="fas fa-angle-left features-list-arrow"></i>
-      <i class="fas fa-history features-icon-list"></i>
-      <p class="features-text-list" id="reject-product">ضمانت بازگشت کالا</p>
+      <p class="features-text-list" id="free-shipping">ارسال رایگان برای خریدهای بیشتر از پنجاه هزار تومان</p>
       <i class="fas fa-angle-left features-list-arrow"></i>
     </div>
     <div id="footer">
@@ -60,15 +52,11 @@
       <a href="#"><i class="fab fa-linkedin hollow social"></i></a>
       <a href="#"><i class="fas fa-envelope hollow social"></i></a>
       <hr>
-      <img id="footer-logo" src="{% static "media/image/logo/logo.png" %}">
-      <p class="hollow" id="footer-logotext">PLANome</p>
-      <a class="hollow footer-textlink" id="faq" href="#">سوالات متداول</a>
-      <a class="hollow footer-textlink" id="usage" href="#">شرایط استفاده</a>
-      <a class="hollow footer-textlink" id="privacy" href="#">حریم خصوصی</a>
-      <a class="hollow footer-textlink" id="about" href="#">درباره پلنوم</a>
-      <a class="hollow footer-textlink" id="copyleft-text" href="#">Copyleft <span id="copyleft-symbol">&copy;</span> text</a>
+      <a class="footer-textlink" href="#">سوالات متداول</a>
+      <a class="footer-textlink" href="#">شرایط استفاده</a>
+      <a class="footer-textlink" href="#">حریم خصوصی</a>
+      <a class="footer-textlink" href="#">درباره پلنوم</a>
     </div>
-    <script src="{% static "js/base.js" %}"></script>
     <script src="https://kit.fontawesome.com/a5a2f71d48.js"></script>
   </body>
 </html>

@@ -1,25 +1,30 @@
 .subcategories {
-  margin-top: 20vh;
-  margin-bottom: 10vh;
+  z-index: 10;
+  width: 100vw;
+  height: auto;
+  margin-top: 270px;
+  margin-bottom: 100px;
 }
 
-.image {
+.subcategory {
+  width: 49vw;
+  height: 100px;
+  margin-top: 100px;
+  display: inline-block;
+}
+
+.subcategory img {
   width: 30vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text {
-  font-size: 3.5vw;
   text-decoration: none;
-}
-
-.subcategory-right {
-  margin-right: 15vw;
-  margin-left: 5vw;
-  float: right;
-  clear: right;
-}
-
-.subcategory-left {
-  margin-right: 5vw;
-  margin-left: 15vw;
+  text-align: center;
+  display: block;
+  color: rgb(0,6,28);
+  margin-top: 20px;
+  font-size: 30px;
 }

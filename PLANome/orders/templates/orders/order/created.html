@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block content %}
+  <img class="basket" src="{% static "media/image/icon/full_cart.png" %}" alt="shopping basket">
   <h1>{{ customer }} عزیز از خرید شما سپاس‌گزاریم</h1>
   <h2>سفارش شما با موفقیت در سیستم ثبت گردید.</h2>
-  <h3>شماره سفارش: {{ order.id }}</h3>
+  <div id="orderId">شماره سفارش: {{ order.id }}</div>
 {% endblock %}

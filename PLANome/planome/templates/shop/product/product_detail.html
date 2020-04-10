@@ -3,6 +3,13 @@
 
 {% block css %}
   <link rel="stylesheet" href="{% static "css/product_detail.css" %}">
+  {% if product.available == True %}
+    <style>
+      #footer {
+        margin-bottom: 180px;
+      }
+    </style>
+  {% endif %}
 {% endblock %}
 
 {% block title %}
@@ -11,19 +18,21 @@
 
 {% block content %}
   <div class="subcategories">
-    {% for category in category_list %}
-      <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-    {% endfor %}
+    <div class="subcategories-list">
+      {% for category in category_list %}
+        <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+      {% endfor %}
+    </div>
   </div>
   <div class="product_detail">
     <h1>{{ product.name }}</h1>
     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "media/image/no_image_available/no_image_available.png" %}{% endif %}" alt="an image of {{ product.name }}">
     {% if product.available == True %}
       {% if product.off_price %}
-        <p class="price">{{ product.price }} تومان</p>
-        <p class="off_price">{{ product.off_price }} تومان</p>
+        <p class="old price">{{ product.price }} تومان</p>
+        <p class="price">{{ product.off_price }} تومان</p>
       {% else %}
-        <p class="off_price">{{ product.price }} تومان</p>
+        <p class="price">{{ product.price }} تومان</p>
       {% endif %}
       <form id="form" action="{% url "cart:cart_add" product.id %}" method="post">
         {{ cart_product_form }}
@@ -31,8 +40,9 @@
         <input id="addToCart" type="submit" value="افزودن به سبد خرید">
       </form>
     {% else %}
-      <p class="price">ناموجود</p>
+      <p class="no price">ناموجود</p>
       <h2>{{ product.description|linebreaks }}</h2>
+      <div id="disabled">ثبت سفارش</div>
     {% endif %}
   </div>
 {% endblock %}

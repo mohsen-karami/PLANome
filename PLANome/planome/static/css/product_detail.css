@@ -1,54 +1,66 @@
 .subcategories {
-  position: fixed;
-  top: 16vh;
-  width: 100vw;
-  height: 7vh;
-  background-color: rgba(2,88,128, .2);
-  box-shadow: inset 0 0 40px rgb(2,88,128);
+  margin-top: 270px;
+  height: 100px;
+  background-color: #fff;
+  z-index: 11;
+  white-space: nowrap;
+  overflow: auto;
+  position: sticky;
+  top: 270px;
+}
+
+.subcategories-list {
+  width: max-content;
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .subcategories a {
-  position: relative;
-  background-color: rgb(2,88,128);
-  padding: 1vw 3vw;
-  border-radius: 100vw;
-  color: #fff;
+  color: rgba(0,6,28,0.6);
   text-decoration: none;
-  top: 2vh;
-  left: 6vw;
-  margin-right: 5vw;
-  font-size: 3.5vw;
+  font-size: 40px;
+  margin-right: 50px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .product_detail {
   width: 100vw;
-  height: 80vh;
-  margin-top: 30vh;
+  height: auto;
+  margin-top: 100px;
 }
 
 .product_detail h1 {
-  font-size: 7vw;
+  font-size: 50px;
   text-align: center;
 }
 
 .product_detail img {
-  width: 80vw;
-  margin-left: 10vw;
+  max-width: 80vw;
+  max-height: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price {
+  color: rgb(8,128,128);
   text-align: center;
-  font-size: 5vw;
-  color: red;
+  font-size: 60px;
   direction: rtl;
+}
+
+.old {
+  color: red;
+  font-size: 40px;
+  margin-top: 100px;
   text-decoration: line-through;
 }
 
-.off_price {
-  text-align: center;
-  font-size: 8vw;
-  color: rgb(8,128,128);
-  direction: rtl;
+.no {
+  color: red;
 }
 
 h2 {
@@ -59,14 +71,36 @@ h2 {
   margin-right: 8vw;
 }
 
-#addToCart {
-  background-color: rgb(2,88,128);
-  color: #fff;
-  border-radius: 100vw;
-  border: none;
-  padding: 1vh 5vw;
+#id_quantity {
+  width: 200px;
+  height: 60px;
+  font-size: 40px;
+  display: block;
+  color: rgb(2,88,128);
+  text-align: center;
+  display: block;
+  margin: 50px auto;
 }
 
-#form {
-  margin-left: 20vw;
+#addToCart {
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  width: 100vw;
+  font-size: 50px;
+  background-color: rgb(6,49,66);
+  font-family: 'Vazir', sans-serif;
+  padding: 52px 0;
+  box-shadow: rgba(0,6,28,0.4) 0 -10px 20px;
+}
+
+#disabled {
+  position: sticky;
+  top: 100%;
+  text-decoration: none;
+  color: rgba(0, 6, 28, 0.5);
+  font-size: 5vw;
+  text-align: center;
+  background-color: rgba(0, 6, 28, 0.3);
+  padding: 52px 0;
 }

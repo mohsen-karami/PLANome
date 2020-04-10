@@ -1,23 +1,31 @@
+.basket {
+  height: 400px;
+  display: block;
+  margin: 100px auto;
+  padding-top: 300px;
+}
+
 h1 {
   color: rgb(2,88,128);
-  margin-top: 20vh;
   text-align: center;
-  font-size: 5vw;
+  font-size: 50px;
 }
 
 h2 {
   color: rgba(2,88,128,.5);
   text-align: center;
-  font-size: 4vw;
+  margin-top: 50px;
+  font-size: 40px;
   direction: rtl;
 }
 
-h3 {
+#orderId {
+  position: sticky;
+  top: 100%;
+  text-decoration: none;
   color: #fff;
-  margin-top: 5vh;
+  font-size: 50px;
   text-align: center;
-  font-size: 5vw;
   background-color: rgb(2,88,128);
-  width: 100vw;
-  padding: 2.5vh 0;
+  padding: 52px 0;
 }

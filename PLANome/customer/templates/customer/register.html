@@ -11,14 +11,14 @@
 
 {% block content %}
   <div class="order-info">
-    {% if phone_number %}
-      <h3>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</h3>
-    {% endif %}
     <p>
       لطفا مشخصات خود را وارد نمایید.
       <br>
       برای تایید اطلاعات با شما تماس گرفته خواهد شد.
     </p>
+    {% if phone_number %}
+      <strong><p>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</p></strong>
+    {% endif %}
   </div>
   <form class="order-form" action="/customer/register/" method="post">
     {{ form.as_p }}

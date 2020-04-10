@@ -1,8 +1,64 @@
-h3 {
-  margin: 20vh auto 0 auto;
-  text-align: center;
-  background-color: lightblue;
-  padding: 2vh 0;
-  width: 50vw;
+.exit {
+  position: fixed;
+  top: 300px;
+  right: 100px;
+  text-decoration: none;
+  font-size: 35px;
+  background-color: rgb(128,0,6);
+  border-radius: 15px;
+  color: #fff;
+  padding: 20px 50px;
+  width: max-content;
   display: block;
+  box-shadow: rgba(128,0,6,0.5) 0 0 15px;
+}
+
+table {
+  width: 90vw;
+  height: auto;
+  display: block;
+  margin: 500px auto 50px auto;
+}
+
+table, thead, tbody, tr, td {
+  border: rgba(0,6,28,0.1) solid 1px;
+}
+
+thead, tbody {
+    width: 100%;
+    display: block;
+}
+
+thead {
+  background-color: rgba(6,49,66,0.8);
+  padding: 10px 0;
+  font-size: 50px;
+  color: #fff;
+}
+
+tbody {
+  font-size: 35px;
+}
+
+tr, td {
+  display: block;
+}
+
+thead td {
+  text-align: center;
+}
+
+tbody td {
+  padding: 50px 0;
+  text-align: center;
+  direction: rtl;
+}
+
+tbody td:first-child {
+  width: 250px;
+  float: right;
+}
+
+tbody td:last-child {
+  width: calc(100% - 250px);
 }

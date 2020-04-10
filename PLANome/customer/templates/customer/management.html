@@ -10,6 +10,26 @@
 {% endblock %}
 
 {% block content %}
-  <h3>{{ customer }}</h3>
-  <a href="/customer/exit">خروج</a>
+  <a class="exit" href="/customer/exit">خروج از حساب کاربری</a>
+  <table>
+    <thead>
+      <tr>
+        <td>{{ customer }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>آدرس:</td>
+        <td>{{ customer.address }}</td>
+      </tr>
+      <tr>
+        <td>کدپستی:</td>
+        <td>{{ customer.postal_code }}</td>
+      </tr>
+      <tr>
+        <td>شماره تماس:</td>
+        <td>{{ customer.phone_number }}</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}

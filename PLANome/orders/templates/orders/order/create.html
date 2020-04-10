@@ -11,12 +11,12 @@
 
 {% block content %}
   <div class="order-info">
-    <h3>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</h3>
     <p>
       لطفا مشخصات خود را وارد نمایید.
       <br>
       برای تایید اطلاعات با شما تماس گرفته خواهد شد.
     </p>
+    <strong><p>شماره تماس {{ phone_number }} در سامانه پلنوم ثبت نشده است.</p></strong>
   </div>
   <form class="order-form" action="/orders/create/" method="post">
     {{ form.as_p }}

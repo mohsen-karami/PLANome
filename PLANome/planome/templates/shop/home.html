@@ -10,13 +10,21 @@
     <img src="{% static "media/image/banner/healthy-eating-life-style.jpeg" %}" alt="healthy eating life style">
   </div>
   <div class="categories">
-    <a href="{{ food.get_absolute_url }}"><img class="food image" src="{% static "media/image/categories/food.png" %}" alt="food icon"></a>
-    <a class="food text" href="{{ food.get_absolute_url }}">خوردنی</a>
-    <a href="{{ drink.get_absolute_url }}"><img class="drink image" src="{% static "media/image/categories/drink.png" %}" alt="drink icon"></a>
-    <a class="drinks drink text" href="{{ drink.get_absolute_url }}">نوشیدنی</a>
-    <a href="{{ personal_care.get_absolute_url }}"><img class="personal-care image" src="{% static "media/image/categories/personal-care.png" %}" alt="personal-care icon"></a>
-    <a class="personal personal-care text" href="{{ personal_care.get_absolute_url }}">بهداشت فردی</a>
-    <a href="{{ home_care.get_absolute_url }}"><img class="home-care image" src="{% static "media/image/categories/home-care.png" %}" alt="home-care icon"></a>
-    <a class="home-care text" href="{{ home_care.get_absolute_url }}">بهداشت منزل</a>
+    <div class="category">
+      <a href="{{ food.get_absolute_url }}"><img src="{% static "media/image/categories/food.png" %}" alt="food icon"></a>
+      <a class="text" href="{{ food.get_absolute_url }}">خوردنی</a>
+    </div>
+    <div class="category">
+      <a href="{{ drink.get_absolute_url }}"><img src="{% static "media/image/categories/drink.png" %}" alt="drink icon"></a>
+      <a class="text" href="{{ drink.get_absolute_url }}">نوشیدنی</a>
+    </div>
+    <div class="category">
+      <a href="{{ personal_care.get_absolute_url }}"><img src="{% static "media/image/categories/personal-care.png" %}" alt="personal-care icon"></a>
+      <a class="text" href="{{ personal_care.get_absolute_url }}">بهداشت فردی</a>
+    </div>
+    <div class="category">
+      <a href="{{ home_care.get_absolute_url }}"><img src="{% static "media/image/categories/home-care.png" %}" alt="home-care icon"></a>
+      <a class="text" href="{{ home_care.get_absolute_url }}">بهداشت منزل</a>
+    </div>
   </div>
 {% endblock %}
