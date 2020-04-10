@@ -92,7 +92,8 @@
 #total_price {
   color: rgb(8,128,128);
   display: block;
-  width: max-content;
+  width: 300px;
+  text-align: left;
   position: relative;
   top: 90px;
   left: 50px;

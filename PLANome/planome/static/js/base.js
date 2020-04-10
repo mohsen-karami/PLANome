@@ -3,13 +3,11 @@ var replaceDigits = function() {
   document.body.innerHTML = document.body.innerHTML.replace(/\d(?=[^<>]*(<|$))/g, function($0) { return map[$0]});
 }
 
-function detect_device() {
-    if (innerWidth <= innerHeight) {
-        document.getElementById('landscape').setAttribute('href', 'static/css/base-landscape-mobile.css');
-    } else {
-        document.getElementById('landscape').setAttribute('href', 'static/css/base-landscape-desktop.css');
-    }
+function specifyHeight() {
+  document.getElementById('content').style.minHeight = String(innerHeight - 500) + 'px';
 }
 
-window.onload = replaceDigits;
-detect_device();
+window.addEventListener('load', function() {
+  replaceDigits();
+  specifyHeight();
+}, false);

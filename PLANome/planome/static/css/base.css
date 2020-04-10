@@ -94,10 +94,6 @@ html, body {
   border: 1px rgb(0,6,28) solid;
 }
 
-#content {
-  min-height: calc(100% - 500px);
-}
-
 #features {
   width: 100vw;
   height: 300px;
