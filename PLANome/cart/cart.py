@@ -40,7 +40,8 @@ class Cart(object):
         for item in self.cart.values():
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
-            if item.get('off_price'):
+            if item.get('off_price') and item['off_price'] != 'None':
+                print(item)
                 item['off_price'] = Decimal(item['off_price'])
                 item['total_off_price'] = item['off_price'] * item['quantity']
             yield item
@@ -54,7 +55,7 @@ class Cart(object):
     def get_total_off_price(self):
         total_off_price = 0
         for item in self.cart.values():
-            if item.get('off_price'):
+            if item.get('off_price') and item['off_price'] != 'None':
                 total_off_price += (Decimal(item['price']) - Decimal(item['off_price'])) * item['quantity']
         return total_off_price
 
