@@ -10,7 +10,8 @@ def home_page(request):
     drink = get_object_or_404(Category, slug='drink')
     personal_care = get_object_or_404(Category, slug='personal-care')
     home_care = get_object_or_404(Category, slug='home-care')
-    return render(request, 'shop/home.html', {'food': food, 'drink': drink, 'personal_care': personal_care, 'home_care': home_care})
+    categories = {food, drink, personal_care, home_care}
+    return render(request, 'shop/home.html', {'categories': categories})
 
 def subcategory_list(request, category_slug):
     categories = Category.objects.all()

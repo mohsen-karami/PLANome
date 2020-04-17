@@ -7,24 +7,14 @@
 
 {% block content %}
   <div id="banner">
-    <img src="{% static "media/image/banner/healthy-eating-life-style.jpeg" %}" alt="healthy eating life style">
+    <img src="{% static "media/image/banner/healthy-eating-life-style.png" %}" alt="healthy eating life style">
   </div>
   <div class="categories">
-    <div class="category">
-      <a href="{{ food.get_absolute_url }}"><img src="{% static "media/image/categories/food.png" %}" alt="food icon"></a>
-      <a class="text" href="{{ food.get_absolute_url }}">خوردنی</a>
-    </div>
-    <div class="category">
-      <a href="{{ drink.get_absolute_url }}"><img src="{% static "media/image/categories/drink.png" %}" alt="drink icon"></a>
-      <a class="text" href="{{ drink.get_absolute_url }}">نوشیدنی</a>
-    </div>
-    <div class="category">
-      <a href="{{ personal_care.get_absolute_url }}"><img src="{% static "media/image/categories/personal-care.png" %}" alt="personal-care icon"></a>
-      <a class="text" href="{{ personal_care.get_absolute_url }}">بهداشت فردی</a>
-    </div>
-    <div class="category">
-      <a href="{{ home_care.get_absolute_url }}"><img src="{% static "media/image/categories/home-care.png" %}" alt="home-care icon"></a>
-      <a class="text" href="{{ home_care.get_absolute_url }}">بهداشت منزل</a>
-    </div>
+    {% for category in categories %}
+      <div class="category">
+        <a href="{{ category.get_absolute_url }}"><img src="{% static "media/image/categories/"|add:category.slug|add:".jpg" %}" alt="{{ category.slug }} icon"></a>
+        <a class="text" href="{{ category.get_absolute_url }}">{{ category }}</a>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

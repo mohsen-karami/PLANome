@@ -1,13 +1,13 @@
 #banner img {
   width: 100vw;
-  height: 600px;
-  margin-top: 250px;
+  height: 450px;
+  margin-top: 268px;
 }
 
 .categories {
   z-index: 10;
   width: 100vw;
-  height: 800px;
+  height: 1000px;
 }
 
 .category {
