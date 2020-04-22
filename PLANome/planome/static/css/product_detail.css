@@ -2,6 +2,7 @@
   margin-top: 270px;
   height: 100px;
   background-color: #fff;
+  direction: rtl;
   z-index: 11;
   white-space: nowrap;
   overflow: auto;
@@ -24,6 +25,10 @@
   display: inline-block;
   text-align: center;
   margin-top: 15px;
+}
+
+.subcategories a:last-child {
+  margin-left: 40px;
 }
 
 .product_detail {
