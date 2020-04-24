@@ -1,6 +1,7 @@
 .cart, .emptyCart {
   width: 100vw;
   height: auto;
+  margin-top: 270px;
 }
 
 .emptyCart img {

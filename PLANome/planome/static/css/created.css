@@ -5,13 +5,14 @@
   padding-top: 300px;
 }
 
-h1 {
+#h1 {
   color: rgb(2,88,128);
   text-align: center;
   font-size: 50px;
+  font-weight: 600;
 }
 
-h2 {
+#h2 {
   color: rgba(2,88,128,.5);
   text-align: center;
   margin-top: 50px;

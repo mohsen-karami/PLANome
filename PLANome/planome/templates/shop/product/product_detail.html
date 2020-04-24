@@ -42,7 +42,9 @@
     {% else %}
       <p class="no price">ناموجود</p>
       <h2>{{ product.description|linebreaks }}</h2>
-      <div id="disabled">ثبت سفارش</div>
     {% endif %}
   </div>
+    {% if product.available != True %}
+      <div id="disabled">ثبت سفارش</div>
+    {% endif %}
 {% endblock %}
