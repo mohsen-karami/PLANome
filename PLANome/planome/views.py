@@ -30,14 +30,18 @@ def product_list(request, subcategory_slug):
         products = Product.objects.none()
         for subcategories in subcategory.parent.all():
             products = products | Product.objects.filter(subcategory=subcategories)
+        parent_subcategory = None
+        category = subcategory.category
     else:
         category = subcategory.parent.all()
+        parent_subcategory = category[0]
         category = category[0].parent.all()
         category_list = []
         for i in range(0, len(category)):
             category_list.append(category[i])
         products = Product.objects.filter(subcategory=subcategory)
-    return render(request, 'shop/product/product_list.html', {'products': products, 'subcategory': subcategory, 'category_list': category_list})
+        category = parent_subcategory.category
+    return render(request, 'shop/product/product_list.html', {'products': products, 'subcategory': subcategory, 'category_list': category_list, 'subcategory_is_parent': subcategory.is_parent, 'parent_subcategory': parent_subcategory, 'category': category})
 
 def product_detail(request, id, slug=None):
     if slug:
@@ -51,4 +55,4 @@ def product_detail(request, id, slug=None):
     for i in range(0, len(category)):
         category_list.append(category[i])
     cart_product_form = CartAddProductForm()
-    return render(request, 'shop/product/product_detail.html', {'product': product, 'cart_product_form': cart_product_form, 'category_list': category_list})
+    return render(request, 'shop/product/product_detail.html', {'product': product, 'subcategory': subcategory, 'cart_product_form': cart_product_form, 'category_list': category_list})
