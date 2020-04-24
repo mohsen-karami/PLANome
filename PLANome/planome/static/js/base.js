@@ -10,4 +10,10 @@ function specifyHeight() {
 window.addEventListener('load', function() {
   replaceDigits();
   specifyHeight();
+  if (document.getElementById('go-back') && document.referrer != '') {
+    document.getElementById('go-back').style.display = 'block';
+    document.getElementById('go-back').addEventListener('click', function() {
+      history.back();
+    });
+  }
 }, false);

@@ -31,10 +31,28 @@
   margin-left: 40px;
 }
 
+#go-back {
+  display: none;
+}
+
+.back-arrow {
+  display: block;
+  font-size: 40px;
+  margin: 30px;
+  color: rgb(6,49,66);
+  text-decoration: none;
+}
+
+.back-arrow .fa-angle-left {
+  font-size: 50px;
+  position: relative;
+  top: 8px;
+}
+
 .product_detail {
   width: 100vw;
   height: auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .product_detail h1 {
@@ -42,7 +60,7 @@
   text-align: center;
   width: 90vw;
   display: block;
-  margin: auto;
+  margin: 50px auto;
 }
 
 .product_detail img {
@@ -83,7 +101,6 @@ h2 {
   width: 200px;
   height: 60px;
   font-size: 40px;
-  display: block;
   color: rgb(2,88,128);
   text-align: center;
   display: block;
