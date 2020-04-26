@@ -63,7 +63,10 @@
         </table>
       </div>
     </div>
-    <a id="button" href="{% url "orders:order_authenticate" %}"><div class="button-text">ثبت سفارش</div></a>
+    <div id="button">
+      <a id="continue-shopping" href="#"><div class="button-text">ادامه خرید</div></a>
+      <a href="{% url "orders:order_authenticate" %}"><div class="button-text">ثبت سفارش</div></a>
+    </div>
   {% else %}
     <div class="emptyCart">
       <img src="{% static "media/image/icon/empty_cart.png" %}" alt="cart is empty">

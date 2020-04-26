@@ -16,4 +16,7 @@ window.addEventListener('load', function() {
       history.back();
     });
   }
+  if (document.getElementById('continue-shopping')) {
+    document.getElementById('continue-shopping').href = document.referrer;
+  }
 }, false);

@@ -137,19 +137,25 @@ td {
 }
 
 #button {
-  text-decoration: none;
-  color: #fff;
-  font-size: 50px;
+  position: fixed;
+  bottom: 0;
   text-align: center;
+  width: 100vw;
+  height: 180px;
+  background-image: linear-gradient(to left, rgb(6,49,66) 45%, #315563);
+  box-shadow: rgba(0,6,28,0.4) 0 -10px 20px;
+}
+
+#button a {
+  color: #fff;
+  float: left;
+  font-size: 50px;
+  text-decoration: none;
 }
 
 .button-text {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  background-color: rgb(6,49,66);
+  width: 50vw;
   padding: 52px 0;
-  box-shadow: rgba(0,6,28,0.4) 0 -10px 20px;
 }
 
 #disabled {
