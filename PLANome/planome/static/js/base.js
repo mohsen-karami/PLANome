@@ -10,13 +10,13 @@ function specifyHeight() {
 window.addEventListener('load', function() {
   replaceDigits();
   specifyHeight();
-  if (document.getElementById('go-back') && document.referrer != '') {
+  if (document.getElementById('go-back') && localStorage.getItem('lastPage') && localStorage.getItem('lastPage') != document.referrer) {
     document.getElementById('go-back').style.display = 'block';
-    document.getElementById('go-back').addEventListener('click', function() {
-      history.back();
-    });
-  }
-  if (document.getElementById('continue-shopping')) {
-    document.getElementById('continue-shopping').href = document.referrer;
+    if (window.location != document.referrer) {
+      localStorage.setItem('lastPage', document.referrer);
+    }
+    document.getElementById('go-back').href = localStorage.getItem('lastPage');
+  } else if (!document.getElementById('go-back')) {
+    localStorage.setItem('lastPage', document.referrer);
   }
 }, false);
